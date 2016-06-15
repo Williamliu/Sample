@@ -1,0 +1,48 @@
+/************************************************************************************/
+/*  JQuery Plugin Tooltips									                       	*/
+/*  Author:	William Liu                                                            	*/
+/*  Date: 	2012-5-29      															*/
+/*  Files: 	jquery.lwh.tooltips.js ;  jquery.lwh.tooltips.css						*/
+/************************************************************************************/
+
+/* Tooltips  Dive ayout CSS */
+.lwhTooltip {
+		display:			none;
+        min-width:			200px; 
+		padding:			20px;
+
+		position:			fixed;
+		top:				50%; 
+        margin-top:          -36px;
+		left:				50%; 
+        margin-left:        -100px;
+        	
+
+		border:				1px solid #666666;
+		border-radius:		20px;
+		
+		background-color:	#dddddd;
+		box-shadow:			2px 5px 10px #888888;
+
+		overflow:			hidden;
+		text-align:			center;
+		vertical-align:		middle;
+		z-index:			99999;
+}
+
+.lwhTooltip-green {
+	color:					#222222;
+	background-color:		#8CEF6F; 
+}
+
+.lwhTooltip-red {
+	color:					#222222;
+	background-color:		#FCC625; 
+}
+
+.lwhTooltip_message {
+	display:				block;
+	font-size:				16px;
+	vertical-align:			middle;
+}
+

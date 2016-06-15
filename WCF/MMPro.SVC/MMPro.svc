@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" factory="System.ServiceModel.Activation.WebServiceHostFactory" Service="MetricsManager.GM.IIS.MMProService" CodeBehind="MMPro.svc.cs" %>

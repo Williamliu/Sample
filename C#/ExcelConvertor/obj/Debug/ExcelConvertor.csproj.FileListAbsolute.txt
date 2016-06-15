@@ -1,0 +1,17 @@
+C:\WorkPlace\ExcelConvertor\bin\Debug\ExcelConvertor.exe.config
+C:\WorkPlace\ExcelConvertor\obj\Debug\ExcelConvertor.Form1.resources
+C:\WorkPlace\ExcelConvertor\obj\Debug\ExcelConvertor.Properties.Resources.resources
+C:\WorkPlace\ExcelConvertor\obj\Debug\ExcelConvertor.csproj.GenerateResource.Cache
+C:\WorkPlace\ExcelConvertor\bin\Debug\ExcelConvertor.exe
+C:\WorkPlace\ExcelConvertor\bin\Debug\ExcelConvertor.pdb
+C:\WorkPlace\ExcelConvertor\obj\Debug\ExcelConvertor.exe
+C:\WorkPlace\ExcelConvertor\obj\Debug\ExcelConvertor.pdb
+D:\Projects\ExcelConvertor\bin\Debug\ExcelConvertor.exe.config
+D:\Projects\ExcelConvertor\obj\Debug\ExcelConvertor.exe
+D:\Projects\ExcelConvertor\obj\Debug\ExcelConvertor.pdb
+D:\Projects\ExcelConvertor\bin\Debug\ExcelConvertor.exe
+D:\Projects\ExcelConvertor\bin\Debug\ExcelConvertor.pdb
+D:\Projects\ExcelConvertor\obj\Debug\ExcelConvertor.csprojResolveAssemblyReference.cache
+D:\Projects\ExcelConvertor\obj\Debug\ExcelConvertor.Form1.resources
+D:\Projects\ExcelConvertor\obj\Debug\ExcelConvertor.Properties.Resources.resources
+D:\Projects\ExcelConvertor\obj\Debug\ExcelConvertor.csproj.GenerateResource.Cache

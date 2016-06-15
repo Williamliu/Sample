@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>HTML CSS Javascript JQuery</title>
+	<script type="text/javascript" 	src="jquery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery-ui-1.8.21.custom.min.js"></script>
+	<link type="text/css" 		   href="jquery/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
+
+	<script type="text/javascript" 	src="WilliamJS/js.lwh.common.js"></script>
+
+	<script type="text/javascript" 	src="WilliamJS/js.lwh.calendar.js"></script>
+	<link 	type="text/css" 	   href="WilliamJS/CSS/js.lwh.calendar.css" rel="stylesheet" />
+
+	<script type="text/javascript" 	src="WilliamJS/jquery.lwh.divbox.js"></script>
+	<link 	type="text/css" 	   href="WilliamJS/CSS/jquery.lwh.divbox.css" rel="stylesheet" />
+
+	<script type="text/javascript" 	src="WilliamJS/jquery.lwh.tooltips.js"></script>
+	<link 	type="text/css" 	   href="WilliamJS/CSS/jquery.lwh.tooltips.css" rel="stylesheet" />
+
+	<script type="text/javascript" 	src="WilliamJS/jquery.lwh.diagbox.js"></script>
+	<link 	type="text/css" 	   href="WilliamJS/CSS/jquery.lwh.diagbox.css" rel="stylesheet" />
+
+	<script type="text/javascript" 	src="WilliamJS/jquery.lwh.tab.js"></script>
+	<link 	type="text/css" 	   href="WilliamJS/CSS/jquery.lwh.tab.css" rel="stylesheet" />
+
+
+	<script language="javascript" type="text/javascript">
+	$(function(){
+		iCalendar1 = new LWH.CALENDAR({
+					head: {
+						lang:		"en",
+						scope:		"calendar1",
+						container: "#mycalendar",
+						//trigger:	"#btn_print",
+						//multiple:	0,
+						showTime:	0,
+						min:		"2016-06-10",
+						max:		"2017-05-15",
+						format:		"M d, Y"
+						//curYY: 		2014,
+						//curMM:		5,
+						
+					},
+					syncObj: {
+						valObj: "#date1",
+						textObj: "#date1-text"
+					},
+					func: {
+						before: function(valObj) {
+							iCalendar1.set( $("#date1").val() );
+						}
+					}
+				});
+
+		iCalendar2 = new LWH.CALENDAR({
+					head: {
+						lang:		"en",
+						scope:		"calendar2",
+						//container: "#mycalendar",
+						trigger:	"#btn_calendar",
+						multiple:	1,
+						btnRemove:	1,
+						showTime:	0,
+						width:		300,
+						min:		"",
+						max:		"",
+						format:		"m/d/Y"
+						//curYY: 		2014,
+						//curMM:		5,
+						
+					},
+					syncObj: {
+						valObj: "#date2",
+						textObj: "#date2-text"
+					},
+					func: {
+						before: function(valObj) {
+							iCalendar2.set( $("#date2").val() );
+						}
+					}
+				});
+
+        		$("#tooltips").lwhTooltip();
+				$("#tooltips_delete").lwhTooltip({
+					hAlign:	"right",
+					vAlign: "bottom"
+				});
+				
+				
+				$("#lwhDiagBox_1").lwhDiagBox({
+					title: "Dialog 111111",
+					resizable: 	true,
+					movable:	true
+				});
+
+				$("#lwhDiagBox_2").lwhDiagBox({
+					title: "Dialog 22222",
+					resizable: 	false,
+					movable:	true,
+					maskable:	false
+				});
+
+				$("#lwhDiagBox_3").lwhDiagBox({
+					title: "Dialog 33333",
+					resizable: 	true,
+					movable:	false,
+					maskable:	true
+				});
+				
+				
+				$(".lwhTab9").not(".lwhTab9-iris, .lwhTab9-awesome").lwhTab9({trigger:"mouseover"});
+				$(".lwhTab9-iris").lwhTab9({trigger:"click", border:true, height:60});
+				$(".lwhTab9-awesome").lwhTab9({trigger:"mouseover",height:60});
+				
+				
+	})
+	
+	function autoshow() {
+		$("#tooltips").autoTShow();
+	}
+	function autoshow_delete() {
+		$("#tooltips_delete").autoTShow("Delete error occur, try again!");
+	}
+	
+	function dialog1() {
+		$("#lwhDiagBox_1").diagBoxShow();
+	}
+
+	function dialog2() {
+		$("#lwhDiagBox_2").diagBoxShow();
+	}
+
+	function dialog3() {
+		$("#lwhDiagBox_3").diagBoxShow();
+	}
+	</script>
+</head>
+<body>
+<br>
+Demo Highlight : HTML, CSS, Javascript + Prototype OOP, JQuery + PlugIn<br>
+<br>
+<!--- calendar 1 ------------------------------------------------------------------->
+<div id="mycalendar" style="display:inline-block; width:300px; vertical-align:top;"></div>
+
+<div style="display:inline-block; width:500px; margin-left:20px; vertical-align:top;">
+    Date Range: 2016-06-10  ~  2017-05-15<br>
+    Single Selection<br>
+    Value: <input id="date1" style="width:120px; font-size:14px;" value=""><br>
+    Text (Format: M d, Y): <span id="date1-text" style="color:blue;font-size:16px;"></span>
+</div>
+<!----------------------------------------------------------------------------------->
+
+<br><br>
+
+<!---- calendar 2 -------------------------------------------------------------------->
+<input type="button" id="btn_calendar" value="Show Calendar" /><br>
+Multiple Selection + Remove Button<br>
+Sorted Value: <input id="date2" style="width:500px; font-size:14px;" value=""><br>
+Sorted Text (Format: m/d/Y): <span id="date2-text" style="color:blue;font-size:16px;"></span>
+<!----------------------------------------------------------------------------------->
+
+
+<br><br>
+<input type="button" onclick="autoshow()" value="Auto Show|Hide" /> 
+<input type="button" onclick="autoshow_delete()" value="Delete Error" />
+
+<br><br>
+<input type="button" onclick="dialog1()" value="Show Dialog1" />
+<input type="button" onclick="dialog2()" value="Show Dialog2" />
+<input type="button" onclick="dialog3()" value="Show Dialog3" />
+
+<br><br>
+<!--- all kind of tabbers --->
+<div class="lwhTab9 lwhTab9-salmon lwhTab9-border-grey" style="width:400px; margin-left:30px; display:inline-block; vertical-align:top;">
+    <ul>
+        <li>Tab One<s></s></li>
+        <li>Tab Two<s></s></li>
+        <li>Tab Three<s></s></li>
+    </ul>   
+	<div>
+	   	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    </div>
+	<div>
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+    </div>
+	<div>
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+    </div>
+</div>
+
+<div class="lwhTab9 lwhTab9-mint" style="width:450px; margin-left:30px; display:inline-block; vertical-align:top;">
+    <ul>
+        <li>Tab One<s></s></li>
+        <li>Tab Two<s></s></li>
+        <li>Tab Three<s></s></li>
+        <li>Tab Four<s></s></li>
+    </ul>   
+	<div>
+	   	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    </div>
+	<div>
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+    </div>
+	<div>
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+    </div>
+	<div>
+	   	44444444444 4444<br />
+	   	44444444444 4444<br />
+	   	44444444444 4444<br />
+	   	44444444444 4444<br />
+	   	44444444444 4444<br />
+	   	44444444444 4444<br />
+    </div>
+</div>
+
+
+<div class="lwhTab9 lwhTab9-iris" style="width:400px; margin-left:30px; display:inline-block; vertical-align:top;">
+    <ul >
+        <li>Tab One<s></s></li>
+        <li>Tab Two<s></s></li>
+        <li>Tab Three<s></s></li>
+    </ul>   
+	<div>
+	   	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    </div>
+	<div>
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+    </div>
+	<div>
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+    </div>
+</div>
+
+<div class="lwhTab9 lwhTab9-awesome lwhTab9-border-grey" style="width:400px; margin-left:30px; display:inline-block; vertical-align:top;">
+    <ul >
+        <li>Tab One<s></s></li>
+        <li>Tab Two<s></s></li>
+        <li>Tab Three<s></s></li>
+    </ul>   
+	<div>
+	   	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    	11111111111 111<br />
+    </div>
+	<div>
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+	   	22222222222 222<br />
+    </div>
+	<div>
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+	   	33333333333 3333<br />
+    </div>
+</div>
+
+<!--------------------------->
+
+
+
+
+
+
+
+<!--- tooltips ------------->
+<div class="lwhTooltip lwhTooltip-green" id="tooltips">
+    <div class="lwhTooltip_message" style="font-size:16px; font-weight:bold; padding-top:5px;">
+     Save Sucessful.
+    </div>
+</div>
+
+<div id="tooltips_delete" class="lwhTooltip lwhTooltip-red">
+    <div class="lwhTooltip_message" style="font-size:16px; font-weight:bold; padding-top:5px;">
+     No Message Here, It will replace by method
+    </div>
+</div>
+<!------------------------->
+
+
+<!--- Diaglog ------------->
+<div id="lwhDiagBox_1" class="lwhDiagBox" ww="680" hh="400" minww="320" minhh="240">
+	<div class="lwhDiagBox-content">
+		This is Dialog 1111<br> 
+        Resizable + Movable + Maskable<br>
+        Min Width: 320px;<br>
+        Min Height: 240px;
+     
+    </div>
+</div>
+
+<div id="lwhDiagBox_2" class="lwhDiagBox" ww="300" hh="200">
+	<div class="lwhDiagBox-content">
+		This is Dialog 2222<br> 
+        Fixed Size + Movable + No Maskable<br>
+        Width: 300px;<br>
+        Height: 200px;
+     
+    </div>
+</div>
+
+<div id="lwhDiagBox_3" class="lwhDiagBox" ww="320" hh="240" minww="200" minhh="200">
+	<div class="lwhDiagBox-content">
+		This is Dialog 3333<br> 
+        Resizable<br>
+        No Movable: always center of browser window<br>
+        min width:  200px;<br>
+        min height: 200px;
+     
+    </div>
+</div>
+<!------------------------->
+
+
+<div style="display:block; height:100px;"></div>
+</body>
+</html>
